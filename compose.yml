@@ -1,0 +1,9 @@
+services:
+  nginx:
+    build:
+      context: ./nginx
+    # volumes:
+    #   - ./nginx:/etc/nginx
+    ports:
+      - "80:80"
+
