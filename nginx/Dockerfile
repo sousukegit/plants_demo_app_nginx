@@ -6,12 +6,15 @@ RUN apt-get update && \
     locale-gen ja_JP.UTF-8
 ENV LC_ALL ja_JP.UTF-8
 
-# インクルード用のディレクトリ内を削除
-RUN rm -f /etc/nginx/conf.d/*
+# # インクルード用のディレクトリ内を削除
+# RUN rm -f /etc/nginx/conf.d/*
 
-# Nginxの設定ファイルをコンテナにコピー
-ADD nginx.conf /etc/nginx/conf.d/myapp.conf
+# # Nginxの設定ファイルをコンテナにコピー
+# ADD nginx.conf /etc/nginx/conf.d/myapp.conf
 
 # 初期状態の設定ファイル
 # ADD ./nginx/nginx.conf /etc/nginx/nginx.conf
 # ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# ビルド完了後にNginxを起動
+# CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
